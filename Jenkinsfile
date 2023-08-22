@@ -8,19 +8,19 @@ pipeline {
         }
         stage("Clone Repo"){
             steps {
-                sh "git clone https://github.com/jenkins-docs/simple-java-maven-app.git"
+                sh "git clone https://github.com/Iqra92/Jenkins.git"
             }
         }
         stage("Build"){
             steps {
-                dir("simple-java-maven-app") {
+                dir("Jenkins") {
                     sh "mvn clean install"
                 }
             }
         }
         stage("Test"){
             steps {
-                dir("simple-java-maven-app") {
+                dir("Jenkins") {
                     sh "mvn test"
                 }
             }
